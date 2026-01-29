@@ -5,24 +5,35 @@ import { db } from "@/lib/db";
 export async function POST(req: NextRequest) {
   try {
     const evt = await verifyWebhook(req);
-
-    // Do something with payload
-    // For this guide, log payload to console
-    const { id } = evt.data;
     const eventType = evt.type;
-    console.log(
-      `Received webhook with ID ${id} and event type of ${eventType}`,
-    );
-    console.log("Webhook payload:", evt.data);
 
-    if (eventType === "user.created") {
-      await db.user.create({
-        data: {
-          externalUserId: evt.data.id,
-          username: evt.data.username ?? "",
-          imageUrl: evt.data.image_url,
-        },
-      });
+    switch (eventType) {
+      case "user.created":
+        await db.user.create({
+          data: {
+            externalUserId: evt.data.id,
+            username: evt.data.username ?? "",
+            imageUrl: evt.data.image_url,
+          },
+        });
+        break;
+      case "user.updated":
+        await db.user.update({
+          where: {
+            externalUserId: evt.data.id,
+          },
+          data: {
+            username: evt.data.username ?? "",
+            imageUrl: evt.data.image_url,
+          },
+        });
+        break;
+      case "user.deleted":
+        await db.user.delete({
+          where: {
+            externalUserId: evt.data.id,
+          },
+        });
     }
 
     return new Response("Webhook received", { status: 200 });
