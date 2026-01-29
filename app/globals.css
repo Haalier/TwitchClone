@@ -83,7 +83,7 @@
 }
 
 .dark {
-  --background: hsl(222.2 84% 4.9%);
+  --background: hsl(233 14% 14%);
   --foreground: hsl(210 40% 98%);
   --card: hsl(222.2 84% 4.9%);
   --card-foreground: hsl(210 40% 98%);
@@ -99,7 +99,7 @@
   --accent-foreground: hsl(210 40% 98%);
   --destructive: hsl(0 62.8% 30.6%);
   --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(217.2 32.6% 17.5%);
+  --border: hsl(230, 10%, 16%);
   --input: hsl(217.2 32.6% 17.5%);
   --ring: hsl(263.4 70% 50.4%);
   --chart-1: oklch(0.488 0.243 264.376);

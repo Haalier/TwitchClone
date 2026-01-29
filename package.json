@@ -14,17 +14,21 @@
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-tooltip": "^1.2.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
     "next": "16.1.5",
+    "next-intl": "^4.8.0",
     "next-themes": "^0.4.6",
     "pg": "^8.17.2",
     "query-string": "^9.3.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "svix": "^1.84.1",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "usehooks-ts": "^3.1.1",
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
